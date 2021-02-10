@@ -1,0 +1,15 @@
+
+
+data:
+  dataset: AADB
+  input_shape: [256, 256]
+
+transforms:
+  crop_shape: [227, 227]
+
+train:
+  lr: 1E-4
+  lr_anneal: 0.1
+  momentum: 0.9
+  weight_decay: 1E-5
+  
