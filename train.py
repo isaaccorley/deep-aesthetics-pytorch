@@ -27,6 +27,7 @@ def main(cfg: DictConfig):
 
     # Load model
     model = RegressionNetwork(
+        backbone=cfg.models.backbone,
         num_attributes=cfg.data.num_attributes,
         pretrained=cfg.models.pretrained
     )
@@ -36,9 +37,7 @@ def main(cfg: DictConfig):
     opt = torch.optim.SGD(
         params=model.parameters(),
         lr=cfg.train.lr,
-        momentum=cfg.train.momentum,
-        weight_decay=cfg.train.weight_decay,
-        nesterov=True
+        momentum=cfg.train.momentum
     )
     loss_fn = RegRankLoss(margin=cfg.train.margin)
 
@@ -47,19 +46,13 @@ def main(cfg: DictConfig):
         image_dir=cfg.data.image_dir,
         labels_dir=cfg.data.labels_dir,
         split="train",
-        transforms=load_transforms(
-            input_shape=cfg.data.input_shape,
-            crop_shape=cfg.data.crop_shape
-        )
+        transforms=load_transforms(input_shape=cfg.data.input_shape)
     )
     val_dataset = AADB(
         image_dir=cfg.data.image_dir,
         labels_dir=cfg.data.labels_dir,
         split="val",
-        transforms=load_transforms(
-            input_shape=cfg.data.input_shape,
-            crop_shape=cfg.data.crop_shape
-        )
+        transforms=load_transforms(input_shape=cfg.data.input_shape)
     )
 
     # Setup dataloaders

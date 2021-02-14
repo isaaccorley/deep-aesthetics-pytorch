@@ -1,5 +1,6 @@
 data/
 runs/
+models/
 .mypy_cache/
 *.pyc
 *.ipynb

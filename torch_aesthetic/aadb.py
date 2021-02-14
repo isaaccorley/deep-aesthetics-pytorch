@@ -10,11 +10,9 @@ from PIL import Image
 
 def load_transforms(
     input_shape: Tuple[int, int] = (256, 256),
-    crop_shape: Tuple[int, int] = (224, 224)
 ) -> T.Compose:
     return T.Compose([
         T.Resize(size=input_shape),
-        T.CenterCrop(size=crop_shape),
         T.ToTensor()
     ])
 

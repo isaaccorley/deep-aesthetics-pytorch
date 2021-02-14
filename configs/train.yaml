@@ -1,4 +1,5 @@
 models:
+  backbone: resnet18
   pretrained: true
 
 data:
@@ -7,18 +8,15 @@ data:
   labels_dir: data/aadb/labels
   num_attributes: 12
   input_shape: [256, 256]
-  crop_shape: [224, 224]
-  batch_size: 64
+  batch_size: 32
 
 train:
   epochs: 5
-  lr: 1E-4
-  lr_anneal: 0.1
+  lr: 3E-4
   momentum: 0.9
-  weight_decay: 1E-5
   margin: 0.02
   num_prefetch: 8
   log_interval: 10
-  save_dir: /content/drive/MyDrive/Github/pointnet-pytorch/models
+  save_dir: models/ #/content/drive/MyDrive/Github/pointnet-pytorch/models
   
 device: cuda
