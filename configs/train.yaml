@@ -17,6 +17,6 @@ train:
   margin: 0.02
   num_prefetch: 8
   log_interval: 10
-  save_dir: models/ #/content/drive/MyDrive/Github/pointnet-pytorch/models
+  save_dir: /content/drive/MyDrive/Github/pointnet-pytorch/models
   
 device: cuda

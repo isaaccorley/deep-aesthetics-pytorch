@@ -1,4 +1,5 @@
 import os
+import shutil
 from typing import List, Tuple
 
 import torch
@@ -41,7 +42,7 @@ class AADB(torch.utils.data.Dataset):
     }
 
     labels_file = "attMat.mat"
-    
+
     def __init__(
         self,
         image_dir: str = "data/aadb/images",
