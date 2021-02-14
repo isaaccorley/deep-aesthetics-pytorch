@@ -10,10 +10,10 @@ from omegaconf import OmegaConf, DictConfig
 from torch.utils.tensorboard import SummaryWriter
 from torch.utils.data import DataLoader
 
-import torch_aesthetic
-from torch_aesthetic.losses import RegRankLoss
-from torch_aesthetic.models import RegressionNetwork
-from torch_aesthetic.aadb import AADB, load_transforms
+import torch_aesthetics
+from torch_aesthetics.losses import RegRankLoss
+from torch_aesthetics.models import RegressionNetwork
+from torch_aesthetics.aadb import AADB, load_transforms
 
 
 # Make reproducible
