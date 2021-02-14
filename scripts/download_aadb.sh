@@ -1,4 +1,4 @@
-mkdir -p data/aadb/images
+mkdir -p data/aadb/
 
 # download labels
 gdown --id 0BxeylfSgpk1MZ0hWWkoxb2hMU3c
