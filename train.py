@@ -87,7 +87,7 @@ def main(cfg: DictConfig):
             opt.zero_grad()
 
             x = x.to(cfg.device).to(torch.float32)
-            y = y.to(cfg.device).to(torch.float32)
+            y = y.to(cfg.device).to(torch.float32)[:, 1:]
             x1, x2 = torch.split(x, cfg.data.batch_size, dim=0)
             y1, y2 = torch.split(y, cfg.data.batch_size, dim=0)
 
@@ -123,7 +123,7 @@ def main(cfg: DictConfig):
         pbar = tqdm(enumerate(val_dataloader), total=len(val_dataloader))
         for batch, (x, y) in pbar:
             x = x.to(cfg.device).to(torch.float32)
-            y = y.to(cfg.device).to(torch.float32)
+            y = y.to(cfg.device).to(torch.float32)[:, 1:]
 
             with torch.no_grad():
                 y_pred = model(x)

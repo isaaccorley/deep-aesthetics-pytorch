@@ -6,7 +6,7 @@ data:
   dataset: AADB
   image_dir: data/aadb/images
   labels_dir: data/aadb/labels
-  num_attributes: 12
+  num_attributes: 11
   input_shape: [256, 256]
   batch_size: 32
 
@@ -15,6 +15,7 @@ train:
   lr: 3E-4
   momentum: 0.9
   margin: 0.02
+  rank_weight: 1.0
   num_prefetch: 8
   log_interval: 10
   save_dir: /content/drive/MyDrive/Github/deep-aesthetics-pytorch/models
